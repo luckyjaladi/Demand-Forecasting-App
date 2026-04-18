@@ -7,6 +7,7 @@ import matplotlib.pyplot as plt
 model = pickle.load(open("model.pkl", "rb"))
 
 st.title("Demand Forecasting App")
+st.write("This app predicts product demand using historical trends and machine learning.")
 st.header("Enter Inputs")
 
 # Inputs
@@ -51,6 +52,8 @@ if st.button("Predict Demand"):
     plt.bar(labels, values)
     plt.title("Demand Comparison")
     st.pyplot(plt)
+    plt.ylabel("Sales")
+    plt.xlabel("Comparison")
 
     # Insight
     if prediction > rolling_mean_7:
